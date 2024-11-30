@@ -6,12 +6,12 @@ public class BlogPost
 {
     public int Id { get; set; }
 
-    [Required]
-    [MaxLength(100)]
+    [Required(ErrorMessage = "Title is required.")]
+    [MaxLength(100, ErrorMessage = "Title cannot exceed 100 characters.")]
     public string Title { get; set; }
 
-    [Required]
-    [MinLength(10)]
+    [Required(ErrorMessage = "Content is required.")]
+    [MinLength(10, ErrorMessage = "Content must be at least 10 characters long.")]
     public string Content { get; set; }
 
     [Required(ErrorMessage = "Author is required.")]
